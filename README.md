@@ -5,7 +5,7 @@ This code is for the Tutorial [Build your own NFT Marketplace from Scratch](http
 To set up the repository and run the marketplace locally, run the below
 ```bash
 git clone https://github.com/sahib2708/major-nft
-cd NFT-Marketplace-Tutorial
+cd major-nft
 npm install
 npm start
 ```
