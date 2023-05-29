@@ -72,8 +72,10 @@ async function connectWebsite() {
     return (
       <div className="">
         <nav className="w-screen">
-          <ul className='flex items-end justify-between py-3 bg-transparent text-white pr-5'>
+          <ul className='flex items-end justify-between py-3 bg-transparent text-white pr-9'>
           <li className='flex items-end ml-5 pb-2'>
+
+          
             <Link to="/">
             
             <div className='inline-block font-bold text-xl ml-2'>
@@ -84,34 +86,34 @@ async function connectWebsite() {
           <li className='w-2/6'>
             <ul className='lg:flex justify-between font-bold mr-10 text-lg'>
               {location.pathname === "/" ? 
-              <li className='border-b-2 hover:pb-0 p-2'>
+              <li className='bg-blue-500 hover:bg-red-600 rounded py-2 px-4'>
                 <Link to="/">Marketplace</Link>
               </li>
               :
-              <li className='hover:border-b-2 hover:pb-0 p-2'>
+              <li className='bg-blue-500 hover:bg-red-600 rounded py-2 px-4'>
                 <Link to="/">Marketplace</Link>
               </li>              
               }
               {location.pathname === "/sellNFT" ? 
-              <li className='border-b-2 hover:pb-0 p-2'>
+              <li className='bg-blue-500 hover:bg-red-600 rounded py-2 px-4'>
                 <Link to="/sellNFT">List My NFT</Link>
               </li>
               :
-              <li className='hover:border-b-2 hover:pb-0 p-2'>
+              <li className='bg-blue-500 hover:bg-red-600 rounded py-2 px-4'>
                 <Link to="/sellNFT">List My NFT</Link>
               </li>              
               }              
               {location.pathname === "/profile" ? 
-              <li className='border-b-2 hover:pb-0 p-2'>
+              <li className='bg-blue-500 hover:bg-red-600 rounded py-2 px-4'>
                 <Link to="/profile">Profile</Link>
               </li>
               :
-              <li className='hover:border-b-2 hover:pb-0 p-2'>
+              <li className='bg-blue-500 hover:bg-red-600 rounded py-2 px-4'>
                 <Link to="/profile">Profile</Link>
               </li>              
               }  
               <li>
-                <button className="enableEthereumButton bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm" onClick={connectWebsite}>{connected? "Connected":"Connect Wallet"}</button>
+                <button className="enableEthereumButton bg-blue-500 hover:bg-red-900 text-white font-bold py-2 px-6 rounded text-sm" onClick={connectWebsite}>{connected? "Connected":"Connect Wallet"}</button>
               </li>
             </ul>
           </li>

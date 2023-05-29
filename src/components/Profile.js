@@ -14,20 +14,24 @@ export default function Profile () {
     async function getNFTData(tokenId) {
         const ethers = require("ethers");
         let sumPrice = 0;
-       
+        //After adding your Hardhat network to your metamask, this code will get providers and signers
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
         const addr = await signer.getAddress();
 
-       
+        //Pull the deployed contract instance
         let contract = new ethers.Contract(MarketplaceJSON.address, MarketplaceJSON.abi, signer)
 
-      
+        //create an NFT Token
         let transaction = await contract.getMyNFTs()
 
-      
-        const items = await Promise.all(transaction.map(async i=> {
-            const tokenURI = await contract.tokenURI(tokenId);
+        /*
+        * Below function takes the metadata from tokenURI and the data returned by getMyNFTs() contract function
+        * and creates an object of information that is to be displayed
+        */
+        
+        const items = await Promise.all(transaction.map(async i => {
+            const tokenURI = await contract.tokenURI(i.tokenId);
             let meta = await axios.get(tokenURI);
             meta = meta.data;
 
@@ -84,7 +88,7 @@ export default function Profile () {
                     })}
                 </div>
                 <div className="mt-10 text-xl">
-                    {data.length == 0 ? "Oops, No NFT data to display (Are you logged in?)":""}
+                    {data.length === 0 ? "Oops, No NFT data to display (Are you logged in?)":""}
                 </div>
             </div>
             </div>
